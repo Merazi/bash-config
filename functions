@@ -1,0 +1,62 @@
+# ; -*- shell-script -*-
+
+#######
+# Bash functions file, by Merazi
+###
+
+# this function doesn't get any value, it just cleans residual packages
+function clean-apt()
+{
+    dpkg -l |              \
+        grep ^rc |         \
+        awk '{print $2}' | \
+        xargs sudo apt purge -y
+}
+
+# really handy extract function
+function extract()
+{
+    if [ -f $1 ] ; then
+        case $1 in
+            *.tar.bz2)   tar xvjf $1     ;;
+            *.tar.gz)    tar xvzf $1     ;;
+            *.bz2)       bunzip2 $1      ;;
+            *.rar)       unrar x $1      ;;
+            *.gz)        gunzip $1       ;;
+            *.tar)       tar xvf $1      ;;
+            *.tbz2)      tar xvjf $1     ;;
+            *.tgz)       tar xvzf $1     ;;
+            *.zip)       unzip $1        ;;
+            *.Z)         uncompress $1   ;;
+            *.7z)        7z x $1         ;;
+            *)           echo "'$1' cannot be extracted via >extract<" ;;
+        esac
+    else
+        echo "'$1' is not a valid file!"
+    fi
+}
+
+# returns my ip address (even tho I can see it on polybar too)
+function my-ip()
+{
+    MY_IP=$(/sbin/ifconfig eno1 | awk '/inet/ { print $2 } ' | sed -e s/addr://)
+    echo ${MY_IP:-"Not connected"}
+}
+
+# this converts webm video/audio to ogg audio
+function webm-to-ogg()
+{
+    for file in *.webm; do
+	ffmpeg -i "$file" -vn -y "$file.ogg";
+    done
+}
+
+# this function plays all the music files on a directory using ffplay
+# it also shuffles the order of the music files
+function shuffle-play()
+{
+    find . -type f -name "*.$1" | shuf | \
+	while read f; do
+	    ffplay -nodisp -autoexit -- "$f";
+	done
+}

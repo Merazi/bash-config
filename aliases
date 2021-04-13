@@ -1,0 +1,38 @@
+# ; -*- shell-script -*-
+
+#######
+# Bash aliases file, by Merazi
+###
+
+# some ls aliases
+alias ls='ls --color=always --time-style=long-iso -F --width=80' \
+      ll='ls -g --sort=time'    \
+      lsa='ls -A'               \
+      lla='ls -gA --sort=time'  \
+      llt='\ls --color=always -lA --width=80' # non sorted
+
+# some practical aliases for my tools
+alias sudo='sudo '                                \
+      refresh='source ~/.bashrc'                  \
+      cat='batcat -pp'                            \
+      ip='ip -c'                                  \
+      which='type -a'                             \
+      du='du -kh'                                 \
+      df='df -kTh'                                \
+      uplist='apt list --upgradable'              \
+      sc='screen -RR'                             \
+      manual-list='apt list --manual-installed'   \
+      path='echo -e ${PATH//:/\\n}'               \
+      libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}' \
+      edit='emacs -nw'
+
+# some sort of bookmarks
+alias gg='cd ~/Git/ && ll'              \
+      dox='cd ~/Documents/ && ll'       \
+      dwn='cd ~/Downloads/ && ll'       \
+      mus='cd ~/Music/ && ll'           \
+      nb='cd ~/NetBeansProjects/ && ll' \
+      pix='cd ~/Pictures/ && ll'        \
+      pa='cd ~/Uni/PA2/ && ll'          \
+      bd='cd ~/Uni/BD1/ && ll'          \
+      so='cd ~/Uni/SO1/ && ll'
