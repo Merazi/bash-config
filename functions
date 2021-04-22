@@ -60,3 +60,8 @@ function shuffle-play()
 	    ffplay -nodisp -autoexit -- "$f";
 	done
 }
+
+function uninstall-adwaita-plus()
+{
+    wget -qO- https://raw.githubusercontent.com/Bonandry/adwaita-plus/master/install.sh | env uninstall=true sh
+}
