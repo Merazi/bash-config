@@ -5,16 +5,16 @@
 ###
 
 # some ls aliases
-alias ls='ls --color=always --time-style=long-iso -F --width=80' \
-      ll='ls -g --sort=time'    \
-      lsa='ls -A'               \
-      lla='ls -gA --sort=time'  \
-      llt='\ls --color=always -lA --width=80' # non sorted
+alias ls='ls -F --color=always'     \
+      ll='ls -lh'  \
+      lsa='ls -A' \
+      lla='ls -lhA' \
+      pll='ls -lh | less -R'  \
+      plla='ls -lhA | less -R'
 
 # some practical aliases for my tools
 alias sudo='sudo '                                \
       refresh='source ~/.bashrc'                  \
-      cat='batcat -pp'                            \
       ip='ip -c'                                  \
       which='type -a'                             \
       du='du -kh'                                 \
@@ -23,7 +23,6 @@ alias sudo='sudo '                                \
       sc='screen -RR'                             \
       manual-list='apt list --manual-installed'   \
       path='echo -e ${PATH//:/\\n}'               \
-      libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}' \
       edit='emacs -nw'
 
 # some sort of bookmarks
