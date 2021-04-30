@@ -25,6 +25,14 @@ alias sudo='sudo '                                \
       path='echo -e ${PATH//:/\\n}'               \
       edit='emacs -nw'
 
+# guix aliases
+alias gi='guix install'     \
+      gs='guix search'      \
+      gr='guix remove'      \
+      gp='guix pull'        \
+      gn='guix pull --news' \
+      gu='guix upgrade'
+
 # some sort of bookmarks
 alias gg='cd ~/Git/ && ll'              \
       dox='cd ~/Documents/ && ll'       \
