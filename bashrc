@@ -36,10 +36,12 @@ fi
 # this is for xterm to display a fancy title
 # if you remove it, you may also want to remove
 # the + symbols from the prompts below
-#PS1="\[\033]0;\u@\h: \w\007\]"
+PS1="\[\033]0;\u@\h: \w\007\]"
 
 # my bash prompt
-PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[00;36m\]\w\[\033[00m\]> '
+PS1+='\[\033[01;32m\]\u@\h\[\033[00m\]:'
+PS1+='\[\033[01;34m\]\w\[\033[01;33m\]'
+PS1+='$(git-status)\[\033[00m\]\$ '
 
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
