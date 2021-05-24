@@ -39,7 +39,7 @@ function extract()
 # returns my ip address (even tho I can see it on polybar too)
 function my-ip()
 {
-    MY_IP=$(/sbin/ifconfig eno1 | awk '/inet/ { print $2 } ' | sed -e s/addr://)
+    MY_IP=$(ifconfig eno1 | awk '/inet/ { print $2 } ' | sed -e s/addr://)
     echo ${MY_IP:-"Not connected"}
 }
 
@@ -59,21 +59,4 @@ function shuffle-play()
 	while read f; do
 	    ffplay -nodisp -autoexit -- "$f";
 	done
-}
-
-# this is for the git status on my bash prompt
-function git-status() {
-    STATUS=$(git status 2>/dev/null |
-		 awk '
-		 /^On branch / {printf($3)}
-		 /^You are currently rebasing/ {printf("rebasing %s", $6)}
-		 /^Initial commit/ {printf(" (init)")}
-		 /^Untracked files/ {printf("|+")}
-		 /^Changes not staged / {printf("|?")}
-		 /^Changes to be committed/ {printf("|*")}
-		 /^Your branch is ahead of/ {printf("|^")}
-		 ')
-    if [ -n "$STATUS" ]; then
-	echo -ne "($STATUS)"
-    fi
 }
