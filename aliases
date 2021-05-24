@@ -4,42 +4,39 @@
 # Bash aliases file, by Merazi
 ###
 
-# some ls aliases
-alias ls='ls -F --color=always'     \
-      ll='ls -lh'  \
-      lsa='ls -A' \
-      lla='ls -lhA' \
-      pll='ls -lh | less -R'  \
-      plla='ls -lhA | less -R'
+# some ls(exa) aliases
+alias ls='exa'     \
+      ll='exa -l'  \
+      lsa='exa -a' \
+      lla='exa -la'\
+      lt='\ls --color=auto -R1 | more'
 
 # some practical aliases for my tools
 alias sudo='sudo '                                \
+      diskinfo='lsblk -io KNAME,TYPE,SIZE,MODEL'  \
       refresh='source ~/.bashrc'                  \
       ip='ip -c'                                  \
       which='type -a'                             \
       du='du -kh'                                 \
       df='df -kTh'                                \
-      uplist='apt list --upgradable'              \
       sc='screen -RR'                             \
-      manual-list='apt list --manual-installed'   \
       path='echo -e ${PATH//:/\\n}'               \
-      edit='emacs -nw'
+      edit='emacs -q -nw'                         \
+      start_searx='docker run --rm -d -v ${PWD}/searx:/etc/searx -p 80:8080 -e BASE_URL=http://localhost:80/ searx/searx'
 
-# guix aliases
-alias gi='guix install'     \
-      gs='guix search'      \
-      gr='guix remove'      \
-      gp='guix pull'        \
-      gn='guix pull --news' \
-      gu='guix upgrade'
+# guix package aliases
+alias gi='guix package -i'      \
+      gs='guix package -s'      \
+      gu='guix package -u'      \
+      gr='guix package -r'      \
+      gp='guix pull'            \
+      gn='guix pull --news'
 
 # some sort of bookmarks
-alias gg='cd ~/Git/ && ll'              \
-      dox='cd ~/Documents/ && ll'       \
-      dwn='cd ~/Downloads/ && ll'       \
-      mus='cd ~/Music/ && ll'           \
-      nb='cd ~/NetBeansProjects/ && ll' \
-      pix='cd ~/Pictures/ && ll'        \
-      pa='cd ~/Uni/PA2/ && ll'          \
-      bd='cd ~/Uni/BD1/ && ll'          \
-      so='cd ~/Uni/SO1/ && ll'
+alias gg='cd ~/Git/ && ls'        \
+      dox='cd ~/Documents/ && ls' \
+      dwn='cd ~/Downloads/ && ls' \
+      pix='cd ~/Pictures/ && ls'  \
+      tmp='cd ~/Templates/ && ls' \
+      uni='cd ~/Documents/Uni/ && ls'
+
