@@ -4,12 +4,11 @@
 # Bash aliases file, by Merazi
 ###
 
-# some ls(exa) aliases
-alias ls='exa'     \
-      ll='exa -l'  \
-      lsa='exa -a' \
-      lla='exa -la'\
-      lt='\ls --color=auto -R1 | more'
+# some ls aliases
+alias ls='ls -F --color=auto' \
+      ll='ls -lh'             \
+      lsa='ls -a'             \
+      lla='ls -lha'
 
 # some practical aliases for my tools
 alias sudo='sudo '                                \
@@ -21,8 +20,7 @@ alias sudo='sudo '                                \
       df='df -kTh'                                \
       sc='screen -RR'                             \
       path='echo -e ${PATH//:/\\n}'               \
-      edit='emacs -q -nw'                         \
-      start_searx='docker run --rm -d -v ${PWD}/searx:/etc/searx -p 80:8080 -e BASE_URL=http://localhost:80/ searx/searx'
+      edit='emacs -q -nw'
 
 # guix package aliases
 alias gi='guix package -i'      \
@@ -39,4 +37,3 @@ alias gg='cd ~/Git/ && ls'        \
       pix='cd ~/Pictures/ && ls'  \
       tmp='cd ~/Templates/ && ls' \
       uni='cd ~/Documents/Uni/ && ls'
-
