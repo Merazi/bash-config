@@ -5,10 +5,10 @@
 ###
 
 # some ls aliases
-alias ls='ls -F --color=auto' \
-      ll='ls -lh'             \
-      lsa='ls -a'             \
-      lla='ls -lha'
+alias ls='exa'      \
+      ll='exa -lGh' \
+      lsa='exa -a'  \
+      lla='exa -laGh'
 
 # some practical aliases for my tools
 alias sudo='sudo '                                \
@@ -20,7 +20,7 @@ alias sudo='sudo '                                \
       df='df -kTh'                                \
       sc='screen -RR'                             \
       path='echo -e ${PATH//:/\\n}'               \
-      edit='emacs -q -nw'
+      edit='emacsclient -c -nw'
 
 # guix package aliases
 alias gi='guix package -i'      \
