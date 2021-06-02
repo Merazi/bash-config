@@ -33,28 +33,42 @@ if [ -f ~/.bash_functions ]; then
     . ~/.bash_functions
 fi
 
-# this is for xterm to display a fancy title
-# if you remove it, you may also want to remove
-# the + symbols from the prompts below
-PS1="\[\033]0;\u@\h: \w\007\]"
+# my bash prompt, it uses the last command's exit value
+# to determine the color of the prompt
+__prompt_command() {
+    local EXIT="$?"
+    PS1='\[\e]0;\u@\h: \w\007\]'
 
-# my simple bash prompt
-PS1+='\[\e[94m\]\w\[\e[00m\]:\$ '
+    # color definitions
+    local Reset='\[\e[0m\]'
+    local Red='\[\e[91m\]'
+    local Green='\[\e[92m\]'
+    local Cyan='\[\e[96m\]'
+    local Blue='\[\e[94m\]'
+
+    PS1+="@${Green}\h${Reset}:${Blue}$(pwd | xargs basename)"
+
+    if [ $EXIT != 0 ]; then
+	PS1+="${Red}❯${Reset} "
+    else
+	PS1+="${Cyan}❯${Reset} "
+    fi
+}
+
+# finally set the PROMPT_COMMAND
+PROMPT_COMMAND=__prompt_command
 
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# The 'bash-completion' package.
-if [ -f /run/current-system/profile/etc/profile.d/bash_completion.sh ]
-then
-  # Bash-completion sources ~/.bash_completion.  It installs a dynamic
-  # completion loader that searches its own completion files as well
-  # as those in ~/.guix-profile and /run/current-system/profile.
-  source /run/current-system/profile/etc/profile.d/bash_completion.sh
-fi
-
+# Use bash-completion, if available
+[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
+    . /usr/share/bash-completion/bash_completion
 
 # better bash completion
 bind "set completion-ignore-case on"
 bind "set completion-map-case on"
 bind "set show-all-if-ambiguous on"
+
+# load cargo environment
+. "$HOME/.cargo/env"
