@@ -24,13 +24,13 @@ shopt -s cdspell       # autocorrect directory names with cd
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # alias definitions
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f ~/.bash-aliases ]; then
+    . ~/.bash-aliases
 fi
 
 # function definitions
-if [ -f ~/.bash_functions ]; then
-    . ~/.bash_functions
+if [ -f ~/.bash-functions ]; then
+    . ~/.bash-functions
 fi
 
 # my bash prompt, it uses the last command's exit value
