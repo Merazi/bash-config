@@ -2,7 +2,7 @@
 
 #######
 # Bashrc file, by Merazi
-###
+####
 
 # check if running interactive
 case $- in *i*) ;; *) return;; esac
@@ -24,39 +24,23 @@ shopt -s cdspell       # autocorrect directory names with cd
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # alias definitions
-if [ -f ~/.bash-aliases ]; then
-    . ~/.bash-aliases
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
 fi
 
 # function definitions
-if [ -f ~/.bash-functions ]; then
-    . ~/.bash-functions
+if [ -f ~/.bash_functions ]; then
+    . ~/.bash_functions
 fi
 
-# my bash prompt, it uses the last command's exit value
-# to determine the color of the prompt
-__prompt_command() {
-    local EXIT="$?"
-    PS1='\[\e]0;\u@\h: \w\007\]'
+# environment variables
+if [ -f ~/.bash_profile ]; then
+    . ~/.bash_profile
+fi
 
-    # color definitions
-    local Reset='\[\e[0m\]'
-    local Red='\[\e[91m\]'
-    local Green='\[\e[92m\]'
-    local Cyan='\[\e[96m\]'
-    local Blue='\[\e[94m\]'
-
-    PS1+="@${Green}\h${Reset}:${Blue}$(pwd | xargs basename)"
-
-    if [ $EXIT != 0 ]; then
-	PS1+="${Red}❯${Reset} "
-    else
-	PS1+="${Cyan}❯${Reset} "
-    fi
-}
-
-# finally set the PROMPT_COMMAND
-PROMPT_COMMAND=__prompt_command
+# my bash prompt
+PS1='\[\e]0;\u@\h:\W\007\]'
+PS1+='\[\e[32m\]\u\[\e[33m\]@\[\e[32m\](\w)\[\e[00m\]> '
 
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
