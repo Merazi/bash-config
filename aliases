@@ -5,22 +5,25 @@
 ###
 
 # some ls aliases
-alias ls='exa'      \
-      ll='exa -lGh' \
-      lsa='exa -a'  \
-      lla='exa -laGh'
+alias ls='ls --color=auto -F'    \
+      ll='ls --color=auto -lF'   \
+      lsa='ls --color=auto -aF'  \
+      lla='ls --color=auto -laF'
 
 # some practical aliases for my tools
-alias sudo='sudo '                                \
-      diskinfo='lsblk -io KNAME,TYPE,SIZE,MODEL'  \
-      refresh='source ~/.bashrc'                  \
-      ip='ip -c'                                  \
-      which='type -a'                             \
-      du='du -kh'                                 \
-      df='df -kTh'                                \
-      sc='screen -RR'                             \
-      path='echo -e ${PATH//:/\\n}'               \
-      edit='emacsclient -c -nw'
+alias sudo='sudo '                                        \
+      diskinfo='lsblk -io KNAME,TYPE,SIZE,MODEL'          \
+      refresh='source ~/.bashrc'                          \
+      ip='ip -c'                                          \
+      which='type -a'                                     \
+      du='du -kh'                                         \
+      df='df -kTh'                                        \
+      sc='screen -RR'                                     \
+      path='echo -e ${PATH//:/\\n}'                       \
+      edit='emacsclient -c -nw'                           \
+      cat='batcat -p --paging=never --theme OneHalfLight' \
+      ffplay='ffplay -nodisp -autoexit -- '               \
+      cls='clear'
 
 # guix package aliases
 alias gi='guix package -i'      \
