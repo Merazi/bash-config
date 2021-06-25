@@ -21,7 +21,7 @@ alias sudo='sudo '                                        \
       sc='screen -RR'                                     \
       path='echo -e ${PATH//:/\\n}'                       \
       edit='emacsclient -c -nw'                           \
-      cat='batcat -p --paging=never --theme OneHalfLight' \
+      cat='batcat -p --paging=never'                      \
       ffplay='ffplay -nodisp -autoexit -- '               \
       cls='clear'
 
