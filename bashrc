@@ -38,9 +38,9 @@ if [ -f ~/.bash_profile ]; then
     . ~/.bash_profile
 fi
 
-# my bash prompt
-PS1='\[\e]0;\u@\h:\W\007\]'
-PS1+='\[\e[32m\]\u\[\e[33m\]@\[\e[32m\](\w)\[\e[00m\]> '
+# I'm now using the starship prompt...
+# because of... ferris the crab :P
+eval "$(starship init bash)"
 
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
