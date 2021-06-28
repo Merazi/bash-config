@@ -47,3 +47,6 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 bind "set completion-ignore-case on"
 bind "set completion-map-case on"
 bind "set show-all-if-ambiguous on"
+
+# greet me
+echo "Hello $USER 😁 Welcome to the Bourne Again SHell."
