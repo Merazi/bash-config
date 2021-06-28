@@ -5,10 +5,17 @@
 ###
 
 # some ls aliases
-alias ls='ls --color=auto -F'    \
-      ll='ls --color=auto -lF'   \
-      lsa='ls --color=auto -aF'  \
-      lla='ls --color=auto -laF'
+#alias ls='ls --color=auto -F'    \
+#      ll='ls --color=auto -lF'   \
+#      lsa='ls --color=auto -aF'  \
+#      lla='ls --color=auto -laF'
+
+# some exa aliases
+alias ls='exa' \
+      ll='exa -l' \
+      lsa='exa -a' \
+      lla='exa -la' \
+      lg='exa -laG'
 
 # some practical aliases for my tools
 alias sudo='sudo '                                        \
@@ -23,7 +30,8 @@ alias sudo='sudo '                                        \
       edit='emacsclient -c -nw'                           \
       cat='batcat -p --paging=never'                      \
       ffplay='ffplay -nodisp -autoexit -- '               \
-      cls='clear'
+      cls='clear'                                         \
+      reset-gnome-grid='gsettings reset org.gnome.shell app-picker-layout'
 
 # guix package aliases
 alias gi='guix package -i'      \
