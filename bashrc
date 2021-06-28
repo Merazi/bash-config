@@ -1,6 +1,6 @@
 # ; -*- shell-script -*-
 
-#######
+########
 # Bashrc file, by Merazi
 ####
 
@@ -24,19 +24,13 @@ shopt -s cdspell       # autocorrect directory names with cd
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # alias definitions
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
+. ~/.bash_aliases
 
 # function definitions
-if [ -f ~/.bash_functions ]; then
-    . ~/.bash_functions
-fi
+. ~/.bash_functions
 
 # environment variables
-if [ -f ~/.bash_profile ]; then
-    . ~/.bash_profile
-fi
+. ~/.bash_profile
 
 # I'm now using the starship prompt...
 # because of... ferris the crab :P
@@ -53,6 +47,3 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 bind "set completion-ignore-case on"
 bind "set completion-map-case on"
 bind "set show-all-if-ambiguous on"
-
-# load cargo environment
-. "$HOME/.cargo/env"
