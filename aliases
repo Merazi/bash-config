@@ -5,17 +5,10 @@
 ###
 
 # some ls aliases
-#alias ls='ls --color=auto -F'    \
-#      ll='ls --color=auto -lF'   \
-#      lsa='ls --color=auto -aF'  \
-#      lla='ls --color=auto -laF'
-
-# some exa aliases
-alias ls='exa' \
-      ll='exa -l' \
-      lsa='exa -a' \
-      lla='exa -la' \
-      lg='exa -laG'
+alias ls='ls --color=auto -F'    \
+      ll='ls --color=auto -lF'   \
+      lsa='ls --color=auto -aF'  \
+      lla='ls --color=auto -laF'
 
 # some practical aliases for my tools
 alias sudo='sudo '                                        \
@@ -27,8 +20,7 @@ alias sudo='sudo '                                        \
       df='df -kTh'                                        \
       sc='screen -RR'                                     \
       path='echo -e ${PATH//:/\\n}'                       \
-      edit='emacsclient -c -nw'                           \
-      cat='batcat -p --paging=never'                      \
+      edit='emacs -nw'                                    \
       ffplay='ffplay -nodisp -autoexit -- '               \
       cls='clear'                                         \
       reset-gnome-grid='gsettings reset org.gnome.shell app-picker-layout'
