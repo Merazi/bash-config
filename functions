@@ -39,7 +39,7 @@ function extract()
 # returns my ip address (even tho I can see it on polybar too)
 function my-ip()
 {
-    MY_IP=$(/usr/sbin/ifconfig wlo1 | awk '/inet/ { print $2 } ' | sed -e s/addr://)
+    MY_IP=$(/usr/sbin/ifconfig eno1 | awk '/inet/ { print $2 } ' | sed -e s/addr://)
     echo ${MY_IP:-"Not connected"}
 }
 
