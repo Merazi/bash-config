@@ -48,4 +48,4 @@ bind "set completion-map-case on"
 bind "set show-all-if-ambiguous on"
 
 # greet me
-echo "Hello $USER 😁 Welcome to GNU/Bash."
+echo "Hello $USER :-) Welcome to GNU/Bash."
