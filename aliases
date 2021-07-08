@@ -4,39 +4,44 @@
 # Bash aliases file, by Merazi
 ###
 
-# some ls aliases
-alias ls='ls --color=auto -F'    \
-      ll='ls --color=auto -lF'   \
-      lsa='ls --color=auto -aF'  \
-      lla='ls --color=auto -laF'
+# - directory listing - #
+alias ls='ls --color=auto -F'
+alias ll='ls --color=auto -lFh'
+alias lsa='ls --color=auto -aF'
+alias lla='ls --color=auto -laFh'
 
-# some practical aliases for my tools
-alias sudo='sudo '                                        \
-      diskinfo='lsblk -io KNAME,TYPE,SIZE,MODEL'          \
-      refresh='source ~/.bashrc'                          \
-      ip='ip -c'                                          \
-      which='type -a'                                     \
-      du='du -kh'                                         \
-      df='df -kTh'                                        \
-      sc='screen -RR'                                     \
-      path='echo -e ${PATH//:/\\n}'                       \
-      edit='emacs -nw'                                    \
-      ffplay='ffplay -nodisp -autoexit -- '               \
-      cls='clear'                                         \
-      reset-gnome-grid='gsettings reset org.gnome.shell app-picker-layout'
+# - tools and quality of life - #
+alias sudo='sudo '
+alias diskinfo='lsblk -io KNAME,TYPE,SIZE,MODEL'
+alias refresh='source ~/.bashrc'
+alias ip='ip -c'
+alias which='type -a'
+alias du='du -kh'
+alias df='df -kTh'
+alias sc='screen -RR'
+alias path='echo -e ${PATH//:/\\n}'
+alias edit='emacs -nw'
+alias ffmusic='ffplay -nodisp -autoexit -- '
+alias cls='clear'
 
-# guix package aliases
-alias gi='guix package -i'      \
-      gs='guix package -s'      \
-      gu='guix package -u'      \
-      gr='guix package -r'      \
-      gp='guix pull'            \
-      gn='guix pull --news'
+# - apt aliases - #
+alias au='sudo apt update'
+alias auu='au && sudo apt upgrade'
+alias auuu='auu && sudo apt full-upgrade'
+alias ar='sudo apt remove'
+alias arr='ar --autoremove'
+alias arrr='arr --purge'
+alias am='sudo apt-mark'
 
-# some sort of bookmarks
-alias gg='cd ~/Git/ && ls'        \
-      dox='cd ~/Documents/ && ls' \
-      dwn='cd ~/Downloads/ && ls' \
-      pix='cd ~/Pictures/ && ls'  \
-      tmp='cd ~/Templates/ && ls' \
-      uni='cd ~/Documents/Uni/ && ls'
+# - bookmarks to different directories - #
+alias dsk='cd ~/Desktop/ && ls'
+alias dox='cd ~/Documents/ && ls'
+alias dwn='cd ~/Downloads/ && ls'
+alias gg='cd ~/Git/ && ls'
+alias mus='cd ~/Music/ && ls'
+alias pix='cd ~/Pictures/ && ls'
+alias pub='cd ~/Public/ && ls'
+alias tmp='cd ~/Templates/ && ls'
+alias vid='cd ~/Videos/ && ls'
+alias uni='cd ~/Documents/Uni/ && ls'
+alias conf='cd ~/.config/ && ls'
