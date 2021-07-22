@@ -4,6 +4,14 @@
 # Bash functions file, by Merazi
 ###
 
+# this function upgrades all the pip installed packages
+function pip-upgrade()
+{
+    pip3 list --outdated --format=freeze \
+	| grep -v '^\-e' | cut -d = -f 1 \
+	| xargs -n1 pip3 install -U
+}
+
 # this function doesn't get any value, it just cleans residual packages
 function clean-apt()
 {
