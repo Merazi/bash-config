@@ -36,7 +36,7 @@ shopt -s cdspell       # autocorrect directory names with cd
 . ~/.cargo/env
 
 # a simple bash prompt
-PS1='bash-\v \[\e[1;93m\][\j] \[\e[1;92m\]\u@\h \[\e[1;94m\]\W \[\e[00m\]\$ '
+PS1='bash-\v \W % '
 
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
@@ -51,4 +51,4 @@ bind "set completion-map-case on"
 bind "set show-all-if-ambiguous on"
 
 # greet me
-echo "Welcome, $USER."
+printf "\e[94mWelcome, $USER. 🤠\e[00m\n"
