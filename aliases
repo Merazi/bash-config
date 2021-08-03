@@ -6,14 +6,10 @@
 
 # - directory listing - #
 
-# alias ls='ls --color=auto -F'
-# alias ll='ls --color=auto -lFh'
-# alias lsa='ls --color=auto -aF'
-# alias lla='ls --color=auto -laFh'
-alias ls='dirr -w'
-alias ll='dirr'
-alias lsa='dirr -wA'
-alias lla='dirr -lA'
+alias ls='dir --color=auto -FB'
+alias ll='ls --color=auto -lh'
+alias lsa='ls --color=auto -a'
+alias lla='ls --color=auto -lah'
 
 # - tools and quality of life - #
 
