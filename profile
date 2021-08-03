@@ -16,4 +16,4 @@ export PATH=$PATH:$HOME/.cargo/bin
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 # make firefox work in wayland
-export MOZ_ENABLE_WAYLAND=1
+# export MOZ_ENABLE_WAYLAND=1
