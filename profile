@@ -2,10 +2,9 @@
 # bash environment variables
 
 # misc variables
-export EDITOR="/usr/bin/emacs"
-export BROWSER="/usr/bin/firefox-esr"
-export PDF_VIEWER="flatpak run org.gnome.Evince"
-export TERMINAL="/usr/bin/tilix"
+export EDITOR="/usr/local/bin/emacs"
+export BROWSER="/usr/bin/firefox"
+export TERMINAL="/usr/bin/konsole"
 
 # path directories
 export PATH=$PATH:$HOME/bin
