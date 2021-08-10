@@ -59,3 +59,7 @@ alias vid='cd ~/Videos/ && ls'
 alias gg='cd ~/Git/ && ls'
 alias uni='cd ~/Documents/Uni/ && ls'
 alias conf='cd ~/.config/ && ls'
+
+# - ssh aliases - #
+
+alias ubuntu-mini='ssh merazi@192.168.122.79'
