@@ -3,8 +3,9 @@
 
 # misc variables
 export EDITOR="/usr/local/bin/emacs"
+export SUDO_EDITOR="/usr/local/bin/emacs -nw"
 export BROWSER="/usr/bin/firefox"
-export TERMINAL="/usr/bin/konsole"
+export TERM="xterm-256color"
 
 # path directories
 export PATH=$PATH:$HOME/bin
@@ -15,4 +16,9 @@ export PATH=$PATH:$HOME/.cargo/bin
 # export _JAVA_AWT_WM_NONREPARENTING=1
 
 # make firefox work in wayland
-# export MOZ_ENABLE_WAYLAND=1
+export MOZ_ENABLE_WAYLAND=1
+
+# run qt apps on wayland
+export QT_QPA_PLATFORM=wayland
+
+. ~/.bashrc
