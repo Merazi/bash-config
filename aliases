@@ -10,7 +10,6 @@ alias ls='ls --color=auto -FB'
 alias ll='ls --color=auto -lh'
 alias lsa='ls --color=auto -a'
 alias lla='ls --color=auto -lah'
-# alias dirr='dirr -f".a1 .f .a3 .g .z .d"'
 
 # - tools and quality of life - #
 
@@ -60,6 +59,11 @@ alias gg='cd ~/Git/ && ls'
 alias uni='cd ~/Documents/Uni/ && ls'
 alias conf='cd ~/.config/ && ls'
 
-# - ssh aliases - #
+# - flatpaks - #
 
-alias ubuntu-mini='ssh merazi@192.168.122.79'
+alias eog='flatpak run org.gnome.eog'
+alias lollypop='flapak run org.gnome.Lollypop'
+alias firefox='flatpak run org.mozilla.firefox'
+alias gimp='flatpak run org.gimp.GIMP'
+alias clapper='flatpak run com.github.rafostar.Clapper'
+alias web='flatpak run org.gnome.Epiphany'
