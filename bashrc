@@ -13,12 +13,13 @@ HISTSIZE=1000          # set the history file length
 HISTFILESIZE=2000      # set the history file size
 
 # setting some shell options
-shopt -s histappend    # append to history
-shopt -s checkwinsize  # check window size
-shopt -s globstar      # use ** for matching files and dirs
-shopt -s autocd        # don't need to use cd to move around
-shopt -s dirspell      # autocorrect directory names without cd
-shopt -s cdspell       # autocorrect directory names with cd
+shopt -s histappend         # just append to history
+shopt -s checkwinsize       # check window size
+shopt -s globstar           # use ** for matching files and dirs
+shopt -s autocd             # don't need to use cd to move around
+shopt -s dirspell           # autocorrect directory names without cd
+shopt -s cdspell            # autocorrect directory names with cd
+shopt -s complete_fullquote # auto quote completions
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -29,14 +30,12 @@ shopt -s cdspell       # autocorrect directory names with cd
 # function definitions
 . ~/.bash_functions
 
-# environment variables
-. ~/.bash_profile
-
 # cargo environment
 . ~/.cargo/env
 
 # a simple bash prompt
-PS1='\[\e[1;32m\]\u\[\e[0;00m\]@\[\e[1;32m\]\h\[\e[0;00m\]:\[\e[1;34m\]\w\[\e[0;00m\]> '
+PS1='\[\033]0;\w\007\]'
+PS1+='\j % '
 
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
