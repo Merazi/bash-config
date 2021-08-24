@@ -33,9 +33,8 @@ shopt -s complete_fullquote # auto quote completions
 # cargo environment
 . ~/.cargo/env
 
-# a simple bash prompt
-PS1='\[\033]0;\w\007\]'
-PS1+='\j % '
+# load bash_profile (I have my environment variables there)
+. ~/.bash_profile
 
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
@@ -48,3 +47,31 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 bind "set completion-ignore-case on"
 bind "set completion-map-case on"
 bind "set show-all-if-ambiguous on"
+
+# A not so simple bash prompt
+function __bash_prompt {
+    # current exit code
+    local EXIT="$?"
+
+    # define some colors
+    local RESET='\[\e[0m\]'
+    local RED='\[\e[91m\]'
+    local GREEN='\[\e[92m\]'
+    local BOLD_BLUE='\[\e[1;94m\]'
+    local YELLOW='\[\e[93m\]'
+    local CYAN='\[\e[96m\]'
+
+    # starting PS1
+    PS1="\n${CYAN}\u@\h ${BOLD_BLUE}\w\n"
+
+    if [[ $EXIT -eq 0 ]]; then
+	PS1+="${GREEN}√${RESET}" # exit = 0
+    else
+	PS1+="${RED}×${EXIT}${RESET}" # exit != 0
+    fi
+    # the rest of the prompt
+    PS1+=" &:${YELLOW}\j${RESET} % "
+}
+
+# set the prompt command
+PROMPT_COMMAND="__bash_prompt${PROMPT_COMMAND:+; $PROMPT_COMMAND}"
