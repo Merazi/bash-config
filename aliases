@@ -46,18 +46,18 @@ alias am='sudo apt-mark'
 
 # - bookmarks to different directories - #
 
-alias dsk='cd ~/Desktop/ && ls'
+alias dsk='cd ~/Desktop/   && ls'
 alias dox='cd ~/Documents/ && ls'
 alias dwn='cd ~/Downloads/ && ls'
-alias mus='cd ~/Music/ && ls'
-alias pix='cd ~/Pictures/ && ls'
-alias pub='cd ~/Public/ && ls'
+alias mus='cd ~/Music/     && ls'
+alias pix='cd ~/Pictures/  && ls'
+alias pub='cd ~/Public/    && ls'
 alias tmp='cd ~/Templates/ && ls'
-alias vid='cd ~/Videos/ && ls'
+alias vid='cd ~/Videos/    && ls'
 
-alias gg='cd ~/Git/ && ls'
+alias gg='cd ~/Proyects/       && ls'
 alias uni='cd ~/Documents/Uni/ && ls'
-alias conf='cd ~/.config/ && ls'
+alias conf='cd ~/.config/      && ls'
 
 # - flatpaks - #
 
