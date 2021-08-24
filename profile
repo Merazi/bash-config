@@ -1,4 +1,4 @@
-# ; -*- shell-script -*-
+# ; -*- shell-script-mode -*-
 # bash environment variables
 
 # misc variables
@@ -16,9 +16,10 @@ export PATH=$PATH:$HOME/.cargo/bin
 # export _JAVA_AWT_WM_NONREPARENTING=1
 
 # make firefox work in wayland
-export MOZ_ENABLE_WAYLAND=1
+# export MOZ_ENABLE_WAYLAND=1
 
 # run qt apps on wayland
-export QT_QPA_PLATFORM=wayland
+# export QT_QPA_PLATFORM=wayland
 
-. ~/.bashrc
+# uncomment this line if you're using a login shell:
+#. ~/.bashrc
