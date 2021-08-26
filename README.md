@@ -1,4 +1,4 @@
-<h2 style="margin-bottom: 5px;">Merazi's Bash Configuration Files</h2>
+<h2 style="text-align: center;">Merazi's Bash Configuration Files</h2>
 
 ## What is this?
 This is my bash configuration, aliases and functions.
