@@ -1,4 +1,4 @@
-<h2 style="text-align: center;">Merazi's Bash Configuration Files</h2>
+# Merazi's Bash Configuration Files
 
 ## What is this?
 This is my bash configuration, aliases and functions.
@@ -12,7 +12,7 @@ files (the ones inside this directory).
 
 ## What makes this configuration file special?
 - It is mine.
-- Cool starthip.rs prompt.
+- Cool minimal prompt.
 - I built this configuration thanks to:
   + https://mrzool.cc/writing/sensible-bash/
   + https://www.gnu.org/software/bash/manual/
@@ -24,7 +24,3 @@ files (the ones inside this directory).
 
 For the installer to succeed you need to delete or move your `~/.bashrc`
 `~/.bash-aliases` `~/.profile` and `~/.bash-functions` files.
-
-Also you're going to need the Starship.rs prompt since I'm using it on my confs,
-you can get starship.rs from this url: https://starship.rs/. Just follow the
-instructions on the website and then copy my bashrc.
