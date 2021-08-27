@@ -48,30 +48,5 @@ bind "set completion-ignore-case on"
 bind "set completion-map-case on"
 bind "set show-all-if-ambiguous on"
 
-# A not so simple bash prompt
-function __bash_prompt {
-    # current exit code
-    local EXIT="$?"
-
-    # define some colors
-    local RESET='\[\e[0m\]'
-    local RED='\[\e[91m\]'
-    local GREEN='\[\e[92m\]'
-    local BOLD_BLUE='\[\e[1;94m\]'
-    local YELLOW='\[\e[93m\]'
-    local CYAN='\[\e[96m\]'
-
-    # starting PS1
-    PS1="\n${CYAN}\u@\h ${BOLD_BLUE}\w\n"
-
-    if [[ $EXIT -eq 0 ]]; then
-	PS1+="${GREEN}√${RESET}" # exit = 0
-    else
-	PS1+="${RED}×${EXIT}${RESET}" # exit != 0
-    fi
-    # the rest of the prompt
-    PS1+=" &:${YELLOW}\j${RESET} % "
-}
-
-# set the prompt command
-PROMPT_COMMAND="__bash_prompt${PROMPT_COMMAND:+; $PROMPT_COMMAND}"
+# very simple bash prompt
+PS1='\[\e[1;96m\]j:\j \[\e[1;92m\]?:$? \[\e[1;94m\]\w\[\e[93m\]%\[\e[00m\] '
