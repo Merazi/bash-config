@@ -7,9 +7,11 @@
 # - directory listing - #
 
 alias ls='ls --color=auto -FB'
-alias ll='ls --color=auto -lh'
-alias lsa='ls --color=auto -a'
-alias lla='ls --color=auto -lah'
+alias ll='ls -lh'
+alias lsa='ls -a'
+alias lla='ls -lah'
+alias dir='dir --group-directories-first --color=auto -QBh'
+alias dirl='dir -g'
 
 # - tools and quality of life - #
 
@@ -43,6 +45,7 @@ alias arr='ar --autoremove'
 alias arrr='arr --purge'
 
 alias am='sudo apt-mark'
+alias uplist='apt list --upgradable'
 
 # - bookmarks to different directories - #
 
