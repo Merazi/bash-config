@@ -6,7 +6,8 @@
 
 # - directory listing - #
 
-alias ls='ls --color=auto -FB'
+alias ls='ls -FB'
+alias la='ls -a'
 alias ll='ls -lh'
 alias lsa='ls -a'
 alias lla='ls -lah'
@@ -64,9 +65,27 @@ alias conf='cd ~/.config/      && ls'
 
 # - flatpaks - #
 
-alias eog='flatpak run org.gnome.eog'
+alias fr='flatpak run'
+alias eog='fr org.gnome.eog'
 alias lollypop='flapak run org.gnome.Lollypop'
-alias firefox='flatpak run org.mozilla.firefox'
-alias gimp='flatpak run org.gimp.GIMP'
-alias clapper='flatpak run com.github.rafostar.Clapper'
-alias web='flatpak run org.gnome.Epiphany'
+alias firefox='fr org.mozilla.firefox'
+alias gimp='fr org.gimp.GIMP'
+alias clapper='fr com.github.rafostar.Clapper'
+alias screenshot='fr io.elementary.screenshot'
+alias tasks='fr io.elementary.tasks'
+alias calculator='fr io.elementary.calculator'
+alias obs='fr com.obsproject.Studio'
+alias bible='fr life.bolls.bolls'
+alias evince='fr org.gnome.Evince'
+alias lo='fr org.libreoffice.LibreOffice'
+
+# - elementaryos apps - #
+
+alias appcenter='io.elementary.appcenter'
+alias appstore='appcenter'
+alias calendar='io.elementary.calendar'
+alias code='io.elementary.code'
+alias files='io.elementary.files'
+alias music='io.elementary.music'
+alias photos='io.elementary.photos'
+alias terminal='io.elementary.terminal'
