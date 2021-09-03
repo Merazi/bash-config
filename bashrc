@@ -36,9 +36,6 @@ shopt -s complete_fullquote # auto quote completions
 # load bash_profile (I have my environment variables there)
 . ~/.bash_profile
 
-# colored GCC warnings and errors
-export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
 # Use bash-completion, if available
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
     . /usr/share/bash-completion/bash_completion
@@ -49,4 +46,7 @@ bind "set completion-map-case on"
 bind "set show-all-if-ambiguous on"
 
 # very simple bash prompt
-PS1='\[\e[1;96m\]j:\j \[\e[1;92m\]?:$? \[\e[1;94m\]\w\[\e[93m\]%\[\e[00m\] '
+PS1='\[\e[94m\]\j:$? \[\e[93m\]\u@\h\[\e[94m\] \w $\[\e[00m\] '
+
+# show last login
+echo "Last login: $(last -1 -R  $USER | head -1 | cut -c 20- | xargs)"
