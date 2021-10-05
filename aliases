@@ -6,7 +6,7 @@
 
 # - directory listing - #
 
-alias ls='ls -FB'
+alias ls='ls -FB --color=auto'
 alias la='ls -a'
 alias ll='ls -lh'
 alias lsa='ls -a'
@@ -27,7 +27,7 @@ alias du='du -kh'
 alias df='df -kTh'
 alias sc='screen -RR'
 alias path='echo -e ${PATH//:/\\n}'
-alias edit='emacs -nw'
+alias edit='emacsclient -nw -a "" -c'
 alias ffmusic='ffplay -nodisp -autoexit -- '
 alias cls='clear'
 
@@ -62,30 +62,3 @@ alias vid='cd ~/Videos/    && ls'
 alias gg='cd ~/Proyects/       && ls'
 alias uni='cd ~/Documents/Uni/ && ls'
 alias conf='cd ~/.config/      && ls'
-
-# - flatpaks - #
-
-alias fr='flatpak run'
-alias eog='fr org.gnome.eog'
-alias lollypop='flapak run org.gnome.Lollypop'
-alias firefox='fr org.mozilla.firefox'
-alias gimp='fr org.gimp.GIMP'
-alias clapper='fr com.github.rafostar.Clapper'
-alias screenshot='fr io.elementary.screenshot'
-alias tasks='fr io.elementary.tasks'
-alias calculator='fr io.elementary.calculator'
-alias obs='fr com.obsproject.Studio'
-alias bible='fr life.bolls.bolls'
-alias evince='fr org.gnome.Evince'
-alias lo='fr org.libreoffice.LibreOffice'
-
-# - elementaryos apps - #
-
-alias appcenter='io.elementary.appcenter'
-alias appstore='appcenter'
-alias calendar='io.elementary.calendar'
-alias code='io.elementary.code'
-alias files='io.elementary.files'
-alias music='io.elementary.music'
-alias photos='io.elementary.photos'
-alias terminal='io.elementary.terminal'
