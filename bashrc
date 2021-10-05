@@ -46,7 +46,11 @@ bind "set completion-map-case on"
 bind "set show-all-if-ambiguous on"
 
 # very simple bash prompt
-PS1='\[\e[94m\]\j:$? \[\e[93m\]\u@\h\[\e[94m\] \w $\[\e[00m\] '
+#PS1='\[\e[94m\]\j:$? \[\e[93m\]\u@\h\[\e[94m\] \w $\[\e[00m\] '
+#PS1='\[\e[1;94m\]\j:$? \[\e[0;97m\]\u@\h:\[\e[1;94m\]\W\[\e[00m\]% '
+PS1="[\[\e[1;32m\]\u@\h \[\e[1;36m\]<\j:$?> \[\e[1;34m\]\W\[\e[0m\]]: "
+#PS1="[\u@\h <\j:$?> \W]: "
+#PS1='\u@\h:\w$ '
 
 # show last login
 echo "Last login: $(last -1 -R  $USER | head -1 | cut -c 20- | xargs)"
