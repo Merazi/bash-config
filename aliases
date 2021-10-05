@@ -1,64 +1,21 @@
-# ; -*- shell-script -*-
+# - merazi's aliases - #
 
-#######
-# Bash aliases file, by Merazi
-###
+#- general aliases -#
 
-# - directory listing - #
+alias \
+    ls='ls --color=auto' \
+    lsa='ls -a' \
+    ll='ls -lh' \
+    lla='ls -lha' \
+    edit='emacsclient -c -nw' \
+    uplist='apt list --upgradable' \
+    wget='wget -c' \
+    untar='tar xvf' \
+    ping='ping -c 5' \
+    ipe='curl ipinfo.io/ip' \
+    refresh='source ~/.bashrc'
 
-alias ls='ls -FB --color=auto'
-alias la='ls -a'
-alias ll='ls -lh'
-alias lsa='ls -a'
-alias lla='ls -lah'
-alias dir='dir --group-directories-first --color=auto -QBh'
-alias dirl='dir -g'
-
-# - tools and quality of life - #
-
-alias sudo='sudo '
-alias man='info'
-alias htop='htop --user=$(whoami)'
-alias diskinfo='lsblk -io KNAME,TYPE,SIZE,MODEL'
-alias refresh='source ~/.bashrc'
-alias ip='ip -c'
-alias which='type -a'
-alias du='du -kh'
-alias df='df -kTh'
-alias sc='screen -RR'
-alias path='echo -e ${PATH//:/\\n}'
-alias edit='emacsclient -nw -a "" -c'
-alias ffmusic='ffplay -nodisp -autoexit -- '
-alias cls='clear'
-
-# - apt aliases - #
-
-alias ai='sudo apt install'
-alias aii='ai --install-recommends'
-alias aiii='aii --install-suggests'
-
-alias au='sudo apt update'
-alias auu='au && sudo apt upgrade'
-alias auuu='auu && sudo apt full-upgrade'
-
-alias ar='sudo apt remove'
-alias arr='ar --autoremove'
-alias arrr='arr --purge'
-
-alias am='sudo apt-mark'
-alias uplist='apt list --upgradable'
-
-# - bookmarks to different directories - #
-
-alias dsk='cd ~/Desktop/   && ls'
-alias dox='cd ~/Documents/ && ls'
-alias dwn='cd ~/Downloads/ && ls'
-alias mus='cd ~/Music/     && ls'
-alias pix='cd ~/Pictures/  && ls'
-alias pub='cd ~/Public/    && ls'
-alias tmp='cd ~/Templates/ && ls'
-alias vid='cd ~/Videos/    && ls'
-
-alias gg='cd ~/Proyects/       && ls'
-alias uni='cd ~/Documents/Uni/ && ls'
-alias conf='cd ~/.config/      && ls'
+# - flatpaks - #
+alias \
+      topdf='flatpak run org.libreoffice.LibreOffice --convert-to pdf' \
+      clapper='flatpak run com.github.rafostar.Clapper'
