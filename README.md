@@ -1,14 +1,14 @@
 # Merazi's Bash Configuration Files
 
 ## What is this?
-This is my bash configuration, aliases and functions.
+This is my Bash configuration files.
 
 ## Why is this?
 I don't want to lose them.
 
 ## How do I use this?
-There's an installer script, it will create symbolic links to the original
-files (the ones inside this directory).
+There's an installer script, it will create symbolic links to the
+original files (the ones inside this directory).
 
 ## What makes this configuration file special?
 - It is mine.
@@ -19,8 +19,3 @@ files (the ones inside this directory).
 - Separated aliases and functions files.
 - Some useful aliases, like file "bookmarks" and such.
 - Some useful functions, like webm-to-ogg converter.
-
-# WARNING!
-
-For the installer to succeed you need to delete or move your `~/.bashrc`
-`~/.bash-aliases` `~/.profile` and `~/.bash-functions` files.
