@@ -12,8 +12,9 @@ alias \
     wget='wget -c' \
     untar='tar xvf' \
     ping='ping -c 5' \
-    ipe='curl ipinfo.io/ip' \
-    refresh='source ~/.bashrc'
+    ipe='curl ipinfo.io/ip && echo' \
+    refresh='source ~/.bashrc' \
+    ip='ip -c'
 
 # - flatpaks - #
 alias \

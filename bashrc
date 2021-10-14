@@ -18,9 +18,17 @@ bind 'set completion-ignore-case on' \
 
 # - loading additional files - #
 
-. ~/.cargo/env
+# . ~/.cargo/env
 . ~/.aliases
 
 # - my bash prompt - #
 
-PS1="\[\e[1;96m\]\j:$? \[\e[34m\]\w \[\e[32m\]\u@\h\[\e[00m\]: "
+PS1='\[\e[1;32m\]\h.\u \[\e[36m\]\j\[\e[00m\].\[\e[1;36m\]$? \[\e[34m\]\W\[\e[32m\]\[\e[00m\]$ '
+
+# - welcome message - #
+
+cat <<EOF
+Hello, $USER
+You're using $SHELL as your shell
+Enjoy using $(uname --operating-system)
+EOF
