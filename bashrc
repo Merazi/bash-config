@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # merazi's bashrc #
 
 # - some quality of life tweaks - #
@@ -23,12 +25,4 @@ bind 'set completion-ignore-case on' \
 
 # - my bash prompt - #
 
-PS1='\[\e[1;32m\]\h.\u \[\e[36m\]\j\[\e[00m\].\[\e[1;36m\]$? \[\e[34m\]\W\[\e[32m\]\[\e[00m\]$ '
-
-# - welcome message - #
-
-cat <<EOF
-Hello, $USER
-You're using $SHELL as your shell
-Enjoy using $(uname --operating-system)
-EOF
+PS1='\[\e[1;32m\]\j\[\e[00m\]:\[\e[1;32m\]$? \[\e[36m\]<\h\[\e[33m\].\[\e[36m\]\u> \[\e[34m\]\W\[\e[32m\]\[\e[00m\] $ '
