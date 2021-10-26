@@ -4,9 +4,9 @@
 
 # - some quality of life tweaks - #
 
-shopt -s autocd cdspell checkjobs checkwinsize dirspell direxpand \
+shopt -s autocd cdspell checkjobs checkwinsize dirspell \
        dirspell globstar gnu_errfmt histappend histverify \
-       inherit_errexit nocasematch
+       inherit_errexit nocasematch expand_aliases
 
 bind 'set completion-ignore-case on' \
      'set completion-map-case on'    \
@@ -23,6 +23,6 @@ bind 'set completion-ignore-case on' \
 # . ~/.cargo/env
 . ~/.aliases
 
-# - my bash prompt - #
+# - bash prompt - #
 
-PS1='\[\e[1;32m\]\j\[\e[00m\]:\[\e[1;32m\]$? \[\e[36m\]<\h\[\e[33m\].\[\e[36m\]\u> \[\e[34m\]\W\[\e[32m\]\[\e[00m\] $ '
+PS1='\h:\w \u% '
