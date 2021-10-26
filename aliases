@@ -7,17 +7,15 @@ alias \
     lsa='ls -a' \
     ll='ls -lh' \
     lla='ls -lha' \
-    edit='emacsclient -c -nw' \
+    edit='emacs -q -nw' \
     uplist='apt list --upgradable' \
     wget='wget -c' \
     untar='tar xvf' \
     ping='ping -c 5' \
     ipe='curl ipinfo.io/ip && echo' \
     refresh='source ~/.bashrc' \
-    play='mpv --no-video'
-    ip='ip -c'
-
-# - flatpaks - #
-alias \
-      topdf='flatpak run org.libreoffice.LibreOffice --convert-to pdf' \
-      clapper='flatpak run com.github.rafostar.Clapper'
+    play='mpv --no-video' \
+    ip='ip -c' \
+    mounter='udisksctl mount -b' \
+    unmounter='udisksctl unmount -b' \
+    sui='sudo -E /bin/bash'
