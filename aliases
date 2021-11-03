@@ -3,16 +3,17 @@
 #- general aliases -#
 
 alias \
-    ls='ls --color=auto' \
+    ls='ls -B --color=auto --quoting-style=shell' \
     lsa='ls -a' \
     ll='ls -lh' \
     lla='ls -lha' \
-    edit='emacs -q -nw' \
+    sl='ls' \
+    edit='emacs -nw' \
     uplist='apt list --upgradable' \
     wget='wget -c' \
     untar='tar xvf' \
-    ping='ping -c 5' \
-    ipe='curl ipinfo.io/ip && echo' \
+    ping='ping -c 3' \
+    myip='curl ipinfo.io/ip && echo' \
     refresh='source ~/.bashrc' \
     play='mpv --no-video' \
     ip='ip -c' \
