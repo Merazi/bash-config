@@ -20,9 +20,15 @@ bind 'set completion-ignore-case on' \
 
 # - loading additional files - #
 
-# . ~/.cargo/env
+. ~/.cargo/env
 . ~/.aliases
 
-# - bash prompt - #
+# - use different colors for regular and root users - #
 
-PS1='\h:\w \u% '
+if [[ $EUID -ne 0 ]]; then
+	COLOR=$(tput bold setaf 4)
+else
+	COLOR=$(tput bold setaf 1)
+fi
+
+PS1='\[\e[1;92m\]\h.\u\[\e[00m\] \[${COLOR}\]\w \$\[\e[00m\] '
