@@ -26,9 +26,10 @@ bind 'set completion-ignore-case on' \
 # - use different colors for regular and root users - #
 
 if [[ $EUID -ne 0 ]]; then
-	COLOR=$(tput bold setaf 4)
+	COLOR='\[\033[01;34m\]'
 else
-	COLOR=$(tput bold setaf 1)
+	COLOR='\[\033[01;31m\]'
 fi
 
-PS1='\[\e[1;92m\]\h.\u\[\e[00m\] \[${COLOR}\]\w \$\[\e[00m\] '
+PS1='\[\e[1;92m\]\h.\u\[\e[00m\] '${COLOR}'\w \$\[\e[00m\] '
+. "$HOME/.cargo/env"
