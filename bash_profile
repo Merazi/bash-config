@@ -2,7 +2,7 @@
 
 # - environment variables - #
 
-export EDITOR=emacs\ -nw
+export EDITOR=vim
 export SUDO_EDITOR=emacs\ -nw
 export TIME_STYLE=locale
 export BROWSER=brave-browser-stable
