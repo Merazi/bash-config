@@ -32,4 +32,3 @@ else
 fi
 
 PS1='\[\e[1;92m\]\h.\u\[\e[00m\] '${COLOR}'\w \$\[\e[00m\] '
-. "$HOME/.cargo/env"
