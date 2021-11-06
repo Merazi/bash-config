@@ -9,6 +9,7 @@ alias \
     lla='ls -lha' \
     sl='ls' \
     edit='emacs -nw' \
+    ":q"='exit' \
     uplist='apt list --upgradable' \
     wget='wget -c' \
     untar='tar xvf' \
