@@ -26,9 +26,9 @@ bind 'set completion-ignore-case on' \
 # - use different colors for regular and root users - #
 
 if [[ $EUID -ne 0 ]]; then
-	COLOR='\[\033[01;34m\]'
+	COLOR='\[\033[01;34m\]' # normal user
 else
-	COLOR='\[\033[01;31m\]'
+	COLOR='\[\033[01;31m\]' # root user
 fi
 
 PS1='\[\e[1;92m\]\h.\u\[\e[00m\] '${COLOR}'\w \$\[\e[00m\] '
