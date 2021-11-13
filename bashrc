@@ -15,8 +15,9 @@ bind 'set completion-ignore-case on' \
 
 # - use bash-completion, if available - #
 
-[[ -f /usr/share/bash-completion/bash_completion ]] && \
-    . /usr/share/bash-completion/bash_completion
+if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+fi
 
 # - loading additional files - #
 
@@ -25,10 +26,4 @@ bind 'set completion-ignore-case on' \
 
 # - use different colors for regular and root users - #
 
-if [[ $EUID -ne 0 ]]; then
-	COLOR='\[\033[01;34m\]' # normal user
-else
-	COLOR='\[\033[01;31m\]' # root user
-fi
-
-PS1='\[\e[1;92m\]\h.\u\[\e[00m\] '${COLOR}'\w \$\[\e[00m\] '
+export PS1='Bash-\v\$ '
