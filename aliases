@@ -3,11 +3,11 @@
 #- general aliases -#
 
 alias \
-    ls='ls -B --color=auto --quoting-style=shell' \
+    ls='dir -B --color=auto --quoting-style=shell' \
     lsa='ls -a' \
     ll='ls -lh' \
     lla='ls -lha' \
-    sl='ls' \
+    sl='dir' \
     edit='emacs -nw' \
     ":q"='exit' \
     uplist='apt list --upgradable' \
