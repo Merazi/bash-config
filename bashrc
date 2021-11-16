@@ -6,7 +6,7 @@
 
 shopt -s autocd cdspell checkjobs checkwinsize dirspell \
        dirspell globstar gnu_errfmt histappend histverify \
-       inherit_errexit nocasematch expand_aliases
+       inherit_errexit expand_aliases
 
 bind 'set completion-ignore-case on' \
      'set completion-map-case on'    \
@@ -23,7 +23,3 @@ fi
 
 . ~/.cargo/env
 . ~/.aliases
-
-# - use different colors for regular and root users - #
-
-export PS1='Bash-\v\$ '
