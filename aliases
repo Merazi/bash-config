@@ -8,7 +8,7 @@ alias \
     ll='ls -lh' \
     lla='ls -lha' \
     sl='dir' \
-    edit='nano' \
+    edit='emacsclient -c' \
     ":q"='exit' \
     uplist='apt list --upgradable' \
     wget='wget -c' \
