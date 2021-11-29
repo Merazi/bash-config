@@ -4,7 +4,7 @@
 
 # - some quality of life tweaks - #
 
-shopt -s autocd cdspell checkjobs checkwinsize dirspell \
+shopt -s autocd cdspell checkjobs checkwinsize dirspell   \
        dirspell globstar gnu_errfmt histappend histverify \
        inherit_errexit expand_aliases
 
@@ -23,3 +23,7 @@ fi
 
 . ~/.cargo/env
 . ~/.aliases
+
+# - i stole macos' prompt - #
+
+PS1='\h:\w \u\$ '
