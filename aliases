@@ -1,7 +1,5 @@
 # - merazi's aliases - #
 
-#- general aliases -#
-
 alias \
     ls='dir -B --color=auto --quoting-style=shell' \
     lsa='ls -a' \
