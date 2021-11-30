@@ -24,6 +24,9 @@ fi
 . ~/.cargo/env
 . ~/.aliases
 
-# - i stole macos' prompt - #
+# - mingw64 prompt wih git branch name - #
 
-PS1='\h:\w \u\$ '
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+PS1='\n\[\e[1;32m\]\h \[\e[35m\]\u \[\e[33m\]\w \[\e[36m\]$(parse_git_branch)\n\[\e[00m\]\$ '
