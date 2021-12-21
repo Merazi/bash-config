@@ -5,8 +5,8 @@
 # - some quality of life tweaks - #
 
 shopt -s autocd cdspell checkjobs checkwinsize dirspell   \
-       dirspell globstar gnu_errfmt histappend histverify \
-       inherit_errexit expand_aliases
+      dirspell globstar gnu_errfmt histappend histverify \
+      inherit_errexit expand_aliases
 
 bind 'set completion-ignore-case on' \
      'set completion-map-case on'    \
@@ -24,9 +24,30 @@ fi
 . ~/.cargo/env
 . ~/.aliases
 
-# - mingw64 prompt wih git branch name - #
+# - bash prompt - #
 
-parse_git_branch() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+function proml {
+
+    # - declare some colors - #
+    local LIGHT_YELLOW="\[\033[1;33m\]"
+    local        GREEN="\[\033[0;32m\]"
+    local  LIGHT_GREEN="\[\033[1;32m\]"
+    local        WHITE="\[\033[1;37m\]"
+    local        RESET="\[\033[00m\]"
+    local   LIGHT_BLUE="\[\033[1;34m\]"
+
+    # - terminal title - #
+    case $TERM in
+	xterm*)
+	    TITLEBAR='\[\033]0;\u@\h:\w\007\]'
+	    ;;
+	*)
+	    TITLEBAR=""
+	    ;;
+    esac
+
+    PS1="$TITLEBAR$LIGHT_YELLOW@$LIGHT_GREEN\h.\u:$LIGHT_BLUE\w$WHITE\$$RESET "
+    PS2='> '
+    PS4='+ '
 }
-PS1='\n\[\e[1;32m\]\h \[\e[35m\]\u \[\e[33m\]\w \[\e[36m\]$(parse_git_branch)\n\[\e[00m\]\$ '
+proml
