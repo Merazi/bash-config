@@ -24,30 +24,7 @@ fi
 . ~/.cargo/env
 . ~/.aliases
 
-# - bash prompt - #
+# - bash prompts - #
 
-function proml {
-
-    # - declare some colors - #
-    local LIGHT_YELLOW="\[\033[1;33m\]"
-    local        GREEN="\[\033[0;32m\]"
-    local  LIGHT_GREEN="\[\033[1;32m\]"
-    local        WHITE="\[\033[1;37m\]"
-    local        RESET="\[\033[00m\]"
-    local   LIGHT_BLUE="\[\033[1;34m\]"
-
-    # - terminal title - #
-    case $TERM in
-	xterm*)
-	    TITLEBAR='\[\033]0;\u@\h:\w\007\]'
-	    ;;
-	*)
-	    TITLEBAR=""
-	    ;;
-    esac
-
-    PS1="$TITLEBAR$LIGHT_YELLOW@$LIGHT_GREEN\h.\u:$LIGHT_BLUE\w$WHITE\$$RESET "
-    PS2='> '
-    PS4='+ '
-}
-proml
+PS1='\[\033]0;\u@\h:\w\007\]' # terminal title
+PS1+='\n\[\033[1;33m\]$? \[\033[7;32m\]\u@\h\[\e[00m\]:\[\033[1;34m\]\w\n\[\033[00m\]% '
